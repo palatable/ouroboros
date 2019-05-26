@@ -19,7 +19,7 @@ import java.util.Objects;
  * @param <F>       the {@link Functor} witness
  * @param <Unfixed> the type corresponding to the unfixed {@link Functor}
  */
-public interface Fix<F extends Functor<?, F>, Unfixed extends Functor<?, ? extends F>> {
+public interface Fix<F extends Functor<?, F>, Unfixed extends Functor<? extends Fix<F, ?>, F>> {
 
     /**
      * Unfix the currently fixed {@link Functor}.
@@ -36,7 +36,7 @@ public interface Fix<F extends Functor<?, F>, Unfixed extends Functor<?, ? exten
      * @param <Unfixed> the type corresponding to the unfixed {@link Functor}
      * @return the fixed-point of the functor
      */
-    static <F extends Functor<?, F>, Unfixed extends Functor<? extends Fix<F, ?>, F>> Fix<F, Unfixed> fix(
+    static <F extends Functor<?, F>, Unfixed extends Functor<? extends Fix<F, ?>, F>> Fix<F, ? extends Unfixed> fix(
             Unfixed unfixed) {
         return new Fix<F, Unfixed>() {
             @Override
