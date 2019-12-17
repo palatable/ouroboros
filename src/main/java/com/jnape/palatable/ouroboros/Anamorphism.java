@@ -1,19 +1,10 @@
 package com.jnape.palatable.ouroboros;
 
-import com.jnape.palatable.lambda.adt.Maybe;
-import com.jnape.palatable.lambda.adt.hlist.Tuple2;
 import com.jnape.palatable.lambda.functions.Fn1;
 import com.jnape.palatable.lambda.functions.Fn2;
 import com.jnape.palatable.lambda.functor.Functor;
 import com.jnape.palatable.lambda.functor.builtin.Lazy;
-import com.jnape.palatable.lambda.monad.transformer.MonadT;
-import com.jnape.palatable.lambda.monad.transformer.builtin.MaybeT;
 
-import static com.jnape.palatable.lambda.adt.Maybe.just;
-import static com.jnape.palatable.lambda.adt.Maybe.nothing;
-import static com.jnape.palatable.lambda.adt.hlist.HList.tuple;
-import static com.jnape.palatable.lambda.functor.builtin.Lazy.lazy;
-import static com.jnape.palatable.lambda.monad.transformer.builtin.MaybeT.maybeT;
 import static com.jnape.palatable.ouroboros.Fix.fix;
 
 /**
